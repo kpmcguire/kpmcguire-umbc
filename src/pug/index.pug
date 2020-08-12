@@ -47,6 +47,9 @@ html(lang="en")
                 each i in ['About', 'Academics',  'Admissions',  'Arts & Culture', 'Athletics', 'Research', 'Support UMBC']
                   li
                     a(href='#') #{i}
+                li.apply-button 
+                  a.brand-button-primary(href="#" aria-label="Apply to UMBC Online") Apply
+
                 .social-media-placeholder-lower
     main#main
       .video-wrapper
@@ -64,47 +67,46 @@ html(lang="en")
                 a.brand-button-primary(href="#" aria-label="Apply to UMBC Online") Apply
                 
             .col
-              form.scroll-form-form(action="")
-                .scroll-form-wrapper
-                  .scroll-form
-                    #page-1
-                      h2 
-                        strong Get your questions answered
-                        span.sr-only : 
-                        | What Degree level are you interested in pursuing?
-                      fieldset.radios
-                        legend.sr-only What Degree Level are you interested in pursuing?
-                        each i in ["Bachelor's Degree", "Master's Degree", "Certificate"]
-                          label
-                            input(type="radio" name="degree")
-                            span #{i}
-                      button.button-scroll-navigation.brand-button-secondary(data-target="page-2") Next
-                    #page-2                    
-                      .form-row
-                        .form-col    
-                          label 
-                            span First name
-                            input(type="text" name="first_name" required)
-                        .form-col
-                          label 
-                            span Last name
-                            input(type="text" name="last_name" required)                        
-                      .form-row
-                        .form-col
-                          label 
-                            span Email address
-                            input(type="email" name="email" required)                        
-                      .form-row
-                        .form-col
-                          label 
-                            span Zip Code
-                            input(type="text" name="zip" required)       
-                        .form-col                 
-                          button.brand-button-secondary(type="submit") Submit
-                      .form-row
-                        .form-col
-                          button.button-scroll-navigation.brand-button-secondary(data-target="page-1") Previous
-                      p.disclaimer We value your privacy and will never share this information without your consent. 
+              form.panel-form(action="")
+                .panel-form-wrapper
+                  #page-1
+                    h2 
+                      strong Get your questions answered
+                      span.sr-only : 
+                      | What Degree level are you interested in pursuing?
+                    fieldset.radios
+                      legend.sr-only What Degree Level are you interested in pursuing?
+                      each i in ["Bachelor's Degree", "Master's Degree", "Certificate"]
+                        label
+                          input(type="radio" name="degree")
+                          span #{i}
+                    button.button-panel-navigation.brand-button-secondary(data-target-show="page-2" data-target-hide="page-1") Next
+                  #page-2                    
+                    .form-row
+                      .form-col    
+                        label 
+                          span First name
+                          input(type="text" name="first_name" required)
+                      .form-col
+                        label 
+                          span Last name
+                          input(type="text" name="last_name" required)                        
+                    .form-row
+                      .form-col
+                        label 
+                          span Email address
+                          input(type="email" name="email" required)                        
+                    .form-row
+                      .form-col
+                        label 
+                          span Zip Code
+                          input(type="text" name="zip" required)       
+                      .form-col                 
+                        button.brand-button-secondary(type="submit") Submit
+                    .form-row
+                      .form-col
+                        button.button-panel-navigation.brand-button-secondary(data-target-show="page-1" data-target-hide="page-2") Previous
+                    p.disclaimer We value your privacy and will never share this information without your consent. 
       .expandable-section
         .container
           .col
@@ -141,7 +143,7 @@ html(lang="en")
         .container 
           .col
             .youtube-embed
-              iframe(width="560" height="315" src="https://www.youtube.com/embed/LxE7a6S-si4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+              iframe(width="560" height="315" src="https://www.youtube.com/embed/LxE7a6S-si4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="UMBC Testimonial")
           .col
             blockquote
               p I cannot express how happy I am that I chose UMBC to obtain my master's degree. I was very impressed with all of the courses and professors. I learned a great deal that directly correlates to my job and will benefit from it now and in the future.

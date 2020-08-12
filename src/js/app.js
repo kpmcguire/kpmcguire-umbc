@@ -21,7 +21,7 @@ const social_placeholder_upper = document.querySelector('.social-media-placehold
 const social_placeholder_lower = document.querySelector('.social-media-placeholder-lower')
 const vid = document.getElementById("bg")
 const pause_button = document.getElementById("vidpause")
-const scroll_form_buttons = document.querySelectorAll('.button-scroll-navigation')
+const panel_form_buttons = document.querySelectorAll('.button-panel-navigation')
 
 const accordion_buttons = document.querySelectorAll('.accordion-button')
 const accordion_sections = document.querySelectorAll('.accordion-section')
@@ -219,27 +219,29 @@ search_results.addEventListener("keydown", (e)=>{
   }
 })
 
-// this is the form in the yellow box that lets you scroll between "pages" on mobile screens
+// this is the form in the yellow box that lets you navigate between "pages" on mobile screens
 
-scroll_form_buttons.forEach(((button)=>{
+panel_form_buttons.forEach(((button)=>{
   button.addEventListener("click", (e)=>{
     e.preventDefault()
-    let target =  e.target.getAttribute('data-target')
-
-    document.querySelector('.scroll-form-wrapper').scrollTo({left: (document.getElementById(target).offsetLeft - 20), behavior: 'smooth'})  
-    return false
+    let target_show =  e.target.getAttribute('data-target-show')
+    let target_hide =  e.target.getAttribute('data-target-hide')
+    document.getElementById(target_show).classList.add('show')
+    document.getElementById(target_show).classList.remove('hide')
+    document.getElementById(target_hide).classList.add('hide')
+    document.getElementById(target_hide).classList.remove('show')
   })
 }))
 
-document.querySelectorAll('.scroll-form-form #page-2 input, .scroll-form-form #page-2 button').forEach((input)=>{
+document.querySelectorAll('.panel-form-wrapper #page-2 input, .panel-form-wrapper #page-2 button').forEach((input)=>{
   input.addEventListener("focus", ()=>{
-    document.querySelector('.scroll-form-wrapper').scrollTo({left: (document.getElementById('page-2').offsetLeft - 20), behavior: 'smooth'})  
+    document.querySelector('.panel-form-wrapper').scrollTo({left: (document.getElementById('page-2').offsetLeft - 20), behavior: 'smooth'})  
   })
 })
 
-document.querySelectorAll('.scroll-form-form #page-1 input, .scroll-form-form #page-1 button').forEach((input)=>{
+document.querySelectorAll('.panel-form-wrapper #page-1 input, .panel-form-wrapper #page-1 button').forEach((input)=>{
   input.addEventListener("focus", ()=>{
-    document.querySelector('.scroll-form-wrapper').scrollTo({left: (document.getElementById('page-1').offsetLeft - 20), behavior: 'smooth'})  
+    document.querySelector('.panel-form-wrapper').scrollTo({left: (document.getElementById('page-1').offsetLeft - 20), behavior: 'smooth'})  
   })
 })
 
