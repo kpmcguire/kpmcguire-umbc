@@ -233,18 +233,6 @@ panel_form_buttons.forEach(((button)=>{
   })
 }))
 
-document.querySelectorAll('.panel-form-wrapper #page-2 input, .panel-form-wrapper #page-2 button').forEach((input)=>{
-  input.addEventListener("focus", ()=>{
-    document.querySelector('.panel-form-wrapper').scrollTo({left: (document.getElementById('page-2').offsetLeft - 20), behavior: 'smooth'})  
-  })
-})
-
-document.querySelectorAll('.panel-form-wrapper #page-1 input, .panel-form-wrapper #page-1 button').forEach((input)=>{
-  input.addEventListener("focus", ()=>{
-    document.querySelector('.panel-form-wrapper').scrollTo({left: (document.getElementById('page-1').offsetLeft - 20), behavior: 'smooth'})  
-  })
-})
-
 accordion_buttons.forEach(button => {
   button.addEventListener('click', (e) => {
 
