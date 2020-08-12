@@ -1037,6 +1037,7 @@ blockquote {
     margin-right: 0.4rem;
     width: 16px;
     height: 16px;
+    border: none;
 
 
     &::before {
@@ -1055,7 +1056,6 @@ blockquote {
       width: 8px;
       height: 8px;
       background-color: transparent;
-    
     }    
     
     &:checked {

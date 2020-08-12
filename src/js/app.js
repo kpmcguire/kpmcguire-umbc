@@ -144,9 +144,7 @@ let search_fn = debounce((e)=>{
     if(e.which==40) {
       // down key pressed, focus on the first result
       e.preventDefault()
-      // console.log(search_results.querySelector('#search-results a'))
       search_results.querySelector('#search-results a').focus({preventScroll:true})
-      // search_results.firstElementChild.focus({preventScroll:true})
       return false
     }
     
