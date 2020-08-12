@@ -1,0 +1,148 @@
+doctype html
+html(lang="en")
+  head
+    title University of Maryland Baltimore County Online Programs
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png")
+  body
+    #skipnav
+      a(href="#main") Skip to main content
+    header
+      .header-wrapper
+        .upper-header-wrapper
+          .container
+            .social-media-placeholder-upper
+              #social-media-container
+                ul#social-navigation
+                  each i in ['facebook', 'twitter', 'instagram', 'youtube']
+                    li
+                      a(href='#')
+                        img(src=`assets/images/icon-${i}.svg` alt=`${i}`)
+            .utility-nav-container
+              ul.utility-navigation
+                each i in ['Return Roadmap', '#UMBCtogether', 'myUMBC']
+                  li
+                    a(href='#') #{i}
+              .search-wrapper
+                form.search-input-wrapper(method="GET" action="https://www.umbc.edu/stats/searchthru/")
+                  input#search(type="text" name="q" autocomplete="off" aria-label="Search UMBC" placeholder="Search UMBC" required aria-labelledby="toggle-search-button" aria-controls="search-results")
+                  button.search-button(type="submit")
+                    img(src="assets/images/icon-search.svg" alt="search")
+                  button#toggle-search-button.toggle-search-button(aria-haspopup="true" aria-expanded="false")
+                    img.icon-glass(src="assets/images/icon-search.svg" alt="display search box")
+                    img.icon-x(src="assets/images/icon-x.svg" alt="hide search box")
+                #search-results(role="region" aria-live="polite")
+        .main-header-wrapper   
+          .container     
+            .branding-container
+              h1 
+                a(href="https://umbc.edu")
+                  img(src="assets/images/logo-umbc.png" alt="University of Maryland Baltimore County")
+            button#toggle-navigation(aria-label="Toggle Navigation" class="menu-button x" aria-haspopup="true" aria-expanded="false")
+              span.lines
+            #main-navigation-container(aria-labelledby="toggle-navigation")
+              ul#main-navigation
+                each i in ['About', 'Academics',  'Admissions',  'Arts & Culture', 'Athletics', 'Research', 'Support UMBC']
+                  li
+                    a(href='#') #{i}
+                .social-media-placeholder-lower
+    main#main
+      .video-wrapper
+        .overlay
+        video#bg(playsinline muted loop poster="assets/images/1915149696.jpg" preload="none" tabindex="-1")
+          source#source(src="" data-src="assets/video/1915149696.mp4" type="video/mp4")
+        button#vidpause
+          img(src="assets/images/icon-pause.svg" alt="click to pause video")
+        .content
+          .container
+            .col
+              h2 Earn a degree or certificate online with a schedule that works for you.
+              p Study anywhere with online course and no-cost digital course materials.
+              p
+                a.brand-button-primary(href="#" aria-label="Apply to UMBC Online") Apply
+                
+            .col
+              form.scroll-form-form(action="")
+                .scroll-form-wrapper
+                  .scroll-form
+                    #page-1
+                      h2 
+                        strong Get your questions answered
+                        span.sr-only : 
+                        | What Degree level are you interested in pursuing?
+                      fieldset.radios
+                        legend.sr-only What Degree Level are you interested in pursuing?
+                        each i in ["Bachelor's Degree", "Master's Degree", "Certificate"]
+                          label
+                            input(type="radio" name="degree")
+                            span #{i}
+                      button.button-scroll-navigation.brand-button-secondary(data-target="page-2") Next
+                    #page-2                    
+                      .form-row
+                        .form-col    
+                          label 
+                            span First name
+                            input(type="text" name="first_name" required)
+                        .form-col
+                          label 
+                            span Last name
+                            input(type="text" name="last_name" required)                        
+                      .form-row
+                        .form-col
+                          label 
+                            span Email address
+                            input(type="email" name="email" required)                        
+                      .form-row
+                        .form-col
+                          label 
+                            span Zip Code
+                            input(type="text" name="zip" required)       
+                        .form-col                 
+                          button.brand-button-secondary(type="submit") Submit
+                      .form-row
+                        .form-col
+                          button.button-scroll-navigation.brand-button-secondary(data-target="page-1") Previous
+                      p.disclaimer We value your privacy and will never share this information without your consent. 
+      .expandable-section
+        .container
+          .col
+            button#accordion-button-1.accordion-button(aria-controls="section1" aria-expanded="true")             
+              h3 Featured Program
+            #section1.accordion-section.open(aria-labelledby="accordion-button-1")
+              h4 Online M.S. in Information Systems
+              img.img-fluid(src="assets/images/umbc-smartphone.jpg" alt="Browing a UMBC site on a smartphone")
+              p Turn data into solutions, and get the skills and career you want. Join the only public university in Maryland with a nationally ranked graduate online technology program.
+              a(href="#") More on Information Systems Degrees →
+          .col
+            button#accordion-button-2.accordion-button(aria-controls="section2" aria-expanded="true")             
+              h3 Nationally Ranked
+            #section2.accordion-section.open(aria-labelledby="accordion-button-2")
+              img.m-auto.img-usnews(src="assets/images/usnews.png" alt="U.S. News Rankings for UMBC")
+              p UMBC is ranked #7 nationally as an innovative university and #13 in undergraduate teaching. 
+          .col
+            button#accordion-button-3.accordion-button(aria-controls="section3" aria-expanded="true")             
+              h3 Registration Dates
+            #section3.accordion-section.open(aria-labelledby="accordion-button-3")
+              article
+                h4 
+                  a(href="#") Fall 2020 Semester Final Registration Deadline
+                p Tuesday, September 10, 2020
+              article
+                h4
+                  a(href="#") Winter 2021 Semester Registration Opens
+                p Tuesday, November 10, 2020
+              article
+                h4
+                  a(href="#") Winter 2021 Semester Final Registration Deadline
+                p Tuesday, January 10, 2021     
+      .testimonial-section
+        .container 
+          .col
+            .youtube-embed
+              iframe(width="560" height="315" src="https://www.youtube.com/embed/LxE7a6S-si4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+          .col
+            blockquote
+              p I cannot express how happy I am that I chose UMBC to obtain my master's degree. I was very impressed with all of the courses and professors. I learned a great deal that directly correlates to my job and will benefit from it now and in the future.
+            footer - Online M.S. Alumni, Neha Jha ‘19

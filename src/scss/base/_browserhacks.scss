@@ -1,0 +1,30 @@
+_:-ms-input-placeholder, :root .header-wrapper .branding-container {
+  flex: 1 1 20%; 
+}
+
+@media screen and (max-width: 768px) {
+  _:-ms-input-placeholder, :root .header-wrapper .branding-container {
+    flex: none;
+  }
+}
+
+_:-ms-input-placeholder, :root .header-wrapper #main-navigation-container {
+  flex: 1 1 75%; 
+}
+
+_:-ms-input-placeholder, :root .content .col,
+_:-ms-input-placeholder, :root .expandable-section .col 
+{
+  flex: 1 1 0%;
+}
+
+@media screen and (max-width: 768px) {
+  _:-ms-input-placeholder, :root .content .col,
+  _:-ms-input-placeholder, :root .expandable-section .col {    
+    flex: none;
+  }
+}
+
+_:-ms-input-placeholder, :root .main-header-wrapper .container {
+  max-width: 100%;
+}
